@@ -4,7 +4,7 @@ import LoginForm from "./components/LoginForm.jsx";
 import StatusBoard from "./components/StatusBoard.jsx";
 import "./App.css";
 
-const socket = io("http://localhost:5003", {
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
     transports: ["websocket"],
 });
 
