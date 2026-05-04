@@ -1,0 +1,534 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #111827;
+}
+
+/* LOGIN */
+
+.login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9fafb;
+}
+
+.login-card {
+    width: 330px;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.login-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ede9fe;
+    color: #5b4bc4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.login-card h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.login-card p {
+    margin: 0 0 22px;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.login-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.login-button {
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #f3f4f6;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 72px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 34px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    background: #5b4bc4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.brand h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.brand span {
+    font-size: 13px;
+    color: #166534;
+    background: #dcfce7;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.connected-user {
+    font-size: 15px;
+}
+
+.connected-user strong {
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    min-height: calc(100vh - 72px);
+    border-right: 1px solid #e5e7eb;
+    padding: 28px;
+    position: relative;
+}
+
+.sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.stat-row div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.total-row {
+    position: absolute;
+    bottom: 70px;
+    left: 28px;
+    right: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socket-state {
+    position: absolute;
+    bottom: 24px;
+    left: 28px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* MAIN */
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2,
+.history-box h2,
+.message-box h2 {
+    font-size: 18px;
+    margin: 0 0 22px;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.view-buttons button {
+    padding: 12px 22px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.view-buttons button.active {
+    border-color: #5b4bc4;
+    color: #5b4bc4;
+}
+
+.members-container.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(190px, 1fr));
+    gap: 24px;
+}
+
+.members-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* MEMBER CARD */
+
+.member-card {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 18px;
+    min-height: 150px;
+}
+
+.member-card.active-member {
+    border-color: #6d5dfc;
+}
+
+.member-card.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: auto;
+}
+
+.member-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.avatar.En ligne {
+    background: #ecfdf5;
+    color: #166534;
+}
+
+.avatar.Absent {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.avatar.Occupé {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.member-top h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.member-top p {
+    margin: 2px 0 0;
+    font-size: 14px;
+}
+
+.you-badge {
+    margin-left: auto;
+    background: #ede9fe;
+    color: #5b4bc4;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-badge.en-ligne {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.absent {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.occupe {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.avatar.en-ligne {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.avatar.absent {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.avatar.occupe {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.dot.en-ligne,
+.dot.online {
+    background: #16a34a;
+}
+
+.dot.absent,
+.dot.away {
+    background: #c47a12;
+}
+
+.dot.occupe,
+.dot.busy {
+    background: #b63131;
+}
+
+/* ===== AVATAR ===== */
+
+.avatar.En\ ligne {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.avatar.Absent {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.avatar.Occupé {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.status-actions button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.status-actions button:hover {
+    color: #5b4bc4;
+}
+
+/* DOTS */
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+
+/* HISTORY + MESSAGES */
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 34px;
+}
+
+.event-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.event-row div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 11px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+.message-form button {
+    padding: 11px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #5b4bc4;
+    color: white;
+    cursor: pointer;
+}
+
+.message-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.message-item p {
+    margin: 5px 0;
+}
+
+.message-item span {
+    color: #6b7280;
+    font-size: 12px;
+}
+.history-box {
+    margin-top: 28px;
+    max-width: 100%;
+}
+
+.history-box h2 {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.event-row div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: static;
+    }
+
+    .total-row,
+    .socket-state {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .members-container.grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+}
